@@ -19,6 +19,7 @@ class UsernameForm extends React.Component {
 	onSubmit(e) {
 		e.preventDefault()
 		this.props.onSubmit(this.state.username)
+	}
 
 	render() {
 		return (
