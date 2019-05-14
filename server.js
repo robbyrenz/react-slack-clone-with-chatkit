@@ -17,8 +17,8 @@ app.use(cors())
 app.post('/users', (req, res) => {
 	const { username } = req.body
 	chatkit.createUser({
-		id: username,
-		name: username
+    name: username,
+		id: username
 	})
 		.then(() => res.sendStatus(201))
 		.catch(error => {
@@ -30,10 +30,10 @@ app.post('/users', (req, res) => {
 		})
 })
 
-app.post('/authenticate', (req, res) => {
-	const authData = chatkit.authenticate({ userId: req.query.user_id })
-	res.status(authData.status).send(authData.body)
-})
+// app.post('/authenticate', (req, res) => {
+// 	const authData = chatkit.authenticate({ userId: req.query.user_id })
+// 	res.status(authData.status).send(authData.body)
+// })
 
 const PORT = 3001
 app.listen(PORT, err => {
